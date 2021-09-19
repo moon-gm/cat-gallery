@@ -10,7 +10,7 @@ const Pages = [
     {'path': 'error', 'component': Error},
 ]
 
-export default () => {
+const Routes = () => {
     const Routes = []
     Pages.map(route => {
         route.path === 'error' ?
@@ -21,3 +21,4 @@ export default () => {
     })
     return <Router><Switch>{Routes}</Switch></Router>
 }
+export default Routes
