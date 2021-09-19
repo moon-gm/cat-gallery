@@ -1,5 +1,3 @@
-import { Link, Switch } from 'react-router-dom';
-
 const Page = () => {
 
   return (

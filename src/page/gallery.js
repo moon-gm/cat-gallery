@@ -1,4 +1,3 @@
-import { Link, Switch } from 'react-router-dom';
 import { useState, useEffect } from 'react'
 
 const Gallery = () => {
