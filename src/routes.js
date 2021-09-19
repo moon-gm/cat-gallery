@@ -12,13 +12,13 @@ const Pages = [
 
 const Routes = () => {
     const Routes = []
-    Pages.map(route => {
+    Pages.map(route => (
         route.path === 'error' ?
             Routes.push(<Route component={route.component} key={route.path}/>)
         : route.path === '/gallery/:year/:month' ?
             Routes.push(<Route path={route.path} component={route.component} key={route.path}/>)
         : Routes.push(<Route exact path={route.path} component={route.component} key={route.path}/>)
-    })
+    ))
     return <Router><Switch>{Routes}</Switch></Router>
 }
 export default Routes
