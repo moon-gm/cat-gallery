@@ -1,12 +1,14 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './page/index'
-import Gallery from './page/gallery'
-import Error from './page/error'
+import Home from './pages/index'
+import Gallery from './pages/gallery'
+import Image from './pages/image'
+import Error from './pages/error'
 import React from 'react';
 
 const Pages = [
     {'path': '/', 'component': Home},
-    {'path': '/gallery/:year/:month', 'component': Gallery},
+    {'path': '/gallery/:year', 'component': Gallery},
+    {'path': '/image/:year/:month/:imagePath', 'component': Image},
     {'path': 'error', 'component': Error},
 ]
 

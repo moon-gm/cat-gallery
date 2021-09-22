@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import './styles/index.css';
 import Layout from './layout';
 import Routes from './routes';
+import Container from '@material-ui/core/Container';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
     <React.StrictMode>
-        <Layout>
-            <Routes/>
-        </Layout>
+        <Container maxWidth="lg">
+            <Layout>
+                <Routes/>
+            </Layout>
+        </Container>
     </React.StrictMode>,
     document.getElementById('root')
 );
