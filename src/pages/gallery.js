@@ -20,7 +20,7 @@ const Gallery = () => {
     }, [path])
 
     return gallerys ? (
-        <Container sx={{ py: 8 }}>
+        <Container sx={{ mt: '40px' }}>
             {/* End hero unit */}
                 {gallerys.map((cards, idx) => (
                     <React.Fragment key={`${ cards[0].id }${ idx }`}>
@@ -57,8 +57,17 @@ const Gallery = () => {
                 ))}
         </Container>
     ) : (
-        <Container sx={{ py: 8 }}>
-            <div>No Data</div>
+        <Container
+            sx={{ mt: '40px' }}
+            align="center"
+        >
+            <Typography
+                component="h2"
+                variant="h5"
+                gutterBottom
+            >
+                No Data
+            </Typography>
         </Container>
     )
 }

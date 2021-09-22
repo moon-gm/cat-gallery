@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
 
 const Image = () => {
 
@@ -13,8 +14,15 @@ const Image = () => {
     }, [path])
 
     return (
-        <div style={{ textAlign: 'center' }}>
-            <img src={path} width="100%"/>
+        <Container
+            sx={{ mt: '40px' }}
+            align="center"
+        >
+            <img
+                src={path}
+                alt="graphics"
+                width="100%"
+            />
             <Button
                 variant="contained"
                 sx={{ mt: '20px' }}
@@ -22,7 +30,7 @@ const Image = () => {
             >
                 Back
             </Button>
-        </div>
+        </Container>
     )
 }
 
