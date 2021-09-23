@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import SvgIcon from '@material-ui/core/SvgIcon';
 import _2013 from '../config/gallery/2013.json'
 import _2014 from '../config/gallery/2014.json'
 import _2015 from '../config/gallery/2015.json'
@@ -15,12 +16,15 @@ import _2018 from '../config/gallery/2018.json'
 import _2019 from '../config/gallery/2019.json'
 import _2020 from '../config/gallery/2020.json'
 
-const CardItems = ({ card, year }) => {
+const CardItems = ({ card, year, allPhotoShow }) => {
 
     const Cards = []
     const returnZeroIdx = (idx) => (idx < 10 ? '0' + String(idx) : String(idx))
 
-    for (let idx = 1; idx <= card.itemNum; idx++) {
+    let length = 3
+    if (String(allPhotoShow) === card.id) length = card.itemNum
+
+    for (let idx = 1; idx <= length; idx++) {
 
         let fileName = String(year) + '-' + returnZeroIdx(card.id) + '_' + returnZeroIdx(idx) + '.jpg'
 
@@ -37,7 +41,7 @@ const CardItems = ({ card, year }) => {
                 <CardMedia
                     component="img"
                     image={`/${year}/${card.id}/${ fileName }`}
-                    alt={ card.title }
+                    alt={ card.title.default ? card.title.name[0] : card.title.name[idx] }
                     sx={{
                         width: 'auto', maxWidth: '300px',
                         height: 'auto', maxHeight: '300px'
@@ -51,10 +55,10 @@ const CardItems = ({ card, year }) => {
                         variant="h5"
                         gutterBottom
                     >
-                        { card.title } { card.index && idx }
+                        { card.title.default ? card.title.name[0] : card.title.name[idx] } { card.title.index && idx }
                     </Typography>
                     <Typography>
-                        { card.content } { card.index && idx }
+                        { card.content.default ? card.content.name[0] : card.content.name[idx] } { card.content.index && idx }
                     </Typography>
                 </CardContent>
 
@@ -76,6 +80,7 @@ const CardItems = ({ card, year }) => {
 const Gallery = () => {
 
     const [path, setPath] = useState('')
+    const [allPhotoShow, setAllPhotoShow] = useState(0)
     const splitPath = path.split('/')
     const year = splitPath[2]
 
@@ -105,22 +110,64 @@ const Gallery = () => {
                             component="h1"
                             variant="h4"
                             gutterBottom
+                            id={card.month}
+                            sx={{ borderBottom: '1px solid black' }}
                         >
+                            <SvgIcon>
+                                <path fill="currentColor" d="M6,19L9,15.14L11.14,17.72L14.14,13.86L18,19H6M6,4H11V12L8.5,10.5L6,12M18,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V4A2,2 0 0,0 18,2Z" />
+                            </SvgIcon>
                             { card.month }
                         </Typography>
+                        <Button
+                            href="#top"
+                            variant="contained"
+                            sx={{ ml: '20px' }}
+                        >
+                            Top
+                        </Button>
                         <Card
                             sx={{
                                 display: 'flex',
                                 flexDirection: 'row',
                                 flexWrap: 'wrap',
                                 justifyContent: 'space-around',
-                                mb: '40px', p: '10px',
+                                mb: '40px', mt: '15px', p: '10px',
                             }}
                         >
                             <CardItems
                                 card={card}
                                 year={year}
+                                allPhotoShow={allPhotoShow}
                             />
+                            {(String(allPhotoShow) !== card.id) && (
+                                <Button
+                                    variant="contained"
+                                    sx={{
+                                        height: '50px',
+                                        m: '20px'
+                                    }}
+                                    onClick={() => {
+                                        switch(card.id) {
+                                            case '1': setAllPhotoShow(1); break
+                                            case '2': setAllPhotoShow(2); break
+                                            case '3': setAllPhotoShow(3); break
+                                            case '4': setAllPhotoShow(4); break
+                                            case '5': setAllPhotoShow(5); break
+                                            case '6': setAllPhotoShow(6); break
+                                            case '7': setAllPhotoShow(7); break
+                                            case '8': setAllPhotoShow(8); break
+                                            case '9': setAllPhotoShow(9); break
+                                            case '10': setAllPhotoShow(10); break
+                                            case '11': setAllPhotoShow(11); break
+                                            case '12': setAllPhotoShow(12); break
+                                            default: setAllPhotoShow(0); break
+                                        }
+                                        window.location.href = '#' + card.month
+                                    }}
+                                >
+                                    View More
+                                </Button>
+                            )}
                         </Card>
                     </React.Fragment>
                 ))}

@@ -4,6 +4,7 @@ import Layout from './layout';
 import Routes from './routes';
 import Container from '@material-ui/core/Container';
 import reportWebVitals from './reportWebVitals';
+import './styles/global.css'
 
 ReactDOM.render(
     <React.StrictMode>
