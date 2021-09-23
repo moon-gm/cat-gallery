@@ -42,6 +42,7 @@ const CardItems = ({ card, year }) => {
                         width: 'auto', maxWidth: '300px',
                         height: 'auto', maxHeight: '300px'
                     }}
+                    loading="lazy"
                 />
 
                 <CardContent sx={{ flexGrow: 1 }}>
@@ -88,6 +89,7 @@ const Gallery = () => {
         case '2018': gallerys = _2018; break
         case '2019': gallerys = _2019; break
         case '2020': gallerys = _2020; break
+        default: gallerys = _2013; break
     }
 
     useEffect(() => {
