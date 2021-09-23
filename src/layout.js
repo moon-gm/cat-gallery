@@ -9,7 +9,7 @@ import Stack from '@material-ui/core/Stack';
 import Button from '@material-ui/core/Button';
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import { siteTitle, siteURL, yearSet } from './config/global.json'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Layout = ({ children }) => {
 
@@ -56,25 +56,30 @@ const Layout = ({ children }) => {
                     sx={{ pt: 4, flexWrap: 'wrap' }}
                     direction="row"
                     justifyContent="center"
+                    alignItems="center"
                 >
-                    {yearSet.map(year => year === path ? (
-                        <Button
-                            href={`/gallery/${year}`}
-                            sx={{ mb: '10px', mr: '10px' }}
-                            variant="contained"
-                            disabled
-                        >
-                            { year }
-                        </Button>    
+                    {yearSet.map((year, idx) => year === path ? (
+                        <React.Fragment key={year}>
+                            <Button
+                                href={`/gallery/${year}`}
+                                variant="text"
+                                disabled
+                            >
+                                { year }
+                            </Button>    
+                            {yearSet.length !== idx + 1 && '>'}
+                        </React.Fragment>
                     )
                     : (
-                        <Button
-                            href={`/gallery/${year}`}
-                            sx={{ mb: '10px', mr: '10px' }}
-                            variant="contained"
-                        >
-                            { year }
-                        </Button>    
+                        <React.Fragment key={year}>
+                            <Button
+                                href={`/gallery/${year}`}
+                                variant="text"
+                            >
+                                { year }
+                            </Button>    
+                            {yearSet.length !== idx + 1 && '>'}
+                        </React.Fragment>   
                     )
                     )}
                 </Stack>
