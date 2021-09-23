@@ -15,8 +15,11 @@ const Image = () => {
 
     return (
         <Container
-            sx={{ mt: '40px' }}
             align="center"
+            sx={{
+                mt: '40px',
+                animation: '1s fadein'
+            }}
         >
             <img
                 src={path}

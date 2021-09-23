@@ -44,7 +44,8 @@ const CardItems = ({ card, year, allPhotoShow }) => {
                 sx={{
                     display: 'flex',
                     flexDirection: 'column',
-                    m: '10px'
+                    m: '10px',
+                    animation: '1s fadein'
                 }}
             >
                 {/* 画像 */}
