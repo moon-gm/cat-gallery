@@ -45,7 +45,8 @@ const CardItems = ({ card, year, allPhotoShow }) => {
                     display: 'flex',
                     flexDirection: 'column',
                     m: '10px',
-                    animation: '1s fadein'
+                    animation: '1s fadein',
+                    maxWidth: '300px'
                 }}
             >
                 {/* 画像 */}
@@ -54,7 +55,7 @@ const CardItems = ({ card, year, allPhotoShow }) => {
                         image={`/${year}/${card.id}/${ fileName }`}
                         alt={ card.title.default ? card.title.name[0] : card.title.name[idx] }
                         sx={{
-                            width: 'auto', maxWidth: '300px',
+                            width: '100%',
                             height: 'auto', maxHeight: '300px'
                         }}
                         loading="lazy"
