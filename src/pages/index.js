@@ -1,5 +1,6 @@
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import CardMedia from '@material-ui/core/CardMedia';
 import { siteTitle } from './../config/global.json'
 
 const Index = () => {
@@ -8,6 +9,17 @@ const Index = () => {
             sx={{ mt: '40px' }}
             align="center"
         >
+            <CardMedia
+                component="img"
+                image="/logo.png"
+                alt="Logo"
+                sx={{
+                    width: '100px',
+                    height: 'auto',
+                    position: 'absolute'
+                }}
+                loading="lazy"
+            />
             <Typography
                 component="h1"
                 variant="h2"
