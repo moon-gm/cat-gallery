@@ -8,10 +8,7 @@ import './styles/global.css'
 
 ReactDOM.render(
     <React.StrictMode>
-        <Container
-            maxWidth="1280px"
-            sx={{ p: 0 }}
-        >
+        <Container sx={{ p: 0 }}>
             <Layout>
                 <Routes/>
             </Layout>

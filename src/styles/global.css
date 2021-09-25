@@ -2,6 +2,11 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Material UI Breadcrumbs */
+.MuiBreadcrumbs-ol {
+    justify-content: center;
+}
+
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }

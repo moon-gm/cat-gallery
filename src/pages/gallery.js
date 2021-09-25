@@ -46,7 +46,7 @@ const CardItems = ({ card, year, allPhotoShow }) => {
                     flexDirection: 'column',
                     m: '10px',
                     animation: '1s fadein',
-                    maxWidth: '300px'
+                    width: '300px',
                 }}
             >
                 {/* 画像 */}
@@ -172,24 +172,14 @@ const Gallery = () => {
                             variant="h4"
                             gutterBottom
                             id={card.month}
-                            sx={{ borderBottom: '1px solid black' }}
+                            sx={{ borderBottom: '1px solid black', pb: '5px' }}
                         >
-                            <SvgIcon>
+                            <SvgIcon sx={{ mr: '10px' }}>
                                 <path fill="currentColor" d="M6,19L9,15.14L11.14,17.72L14.14,13.86L18,19H6M6,4H11V12L8.5,10.5L6,12M18,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V4A2,2 0 0,0 18,2Z" />
                             </SvgIcon>
                             { card.month }
                         </Typography>
                     {/* 月次タイトル */}
-
-                    {/* Topボタン */}
-                        <Button
-                            href="#top"
-                            variant="contained"
-                            sx={{ ml: '20px' }}
-                        >
-                            Top
-                        </Button>
-                    {/* Topボタン */}
 
                     {/* 展開画像Closeボタン */}
                         {(allPhotoShow[Number(card.id) - 1][card.id]) && (
@@ -211,6 +201,7 @@ const Gallery = () => {
                                 flexWrap: 'wrap',
                                 justifyContent: 'space-around',
                                 mb: '40px', mt: '15px', p: '10px',
+                                backgroundColor: 'rgb(245, 245, 245)'
                             }}
                         >
                             {/* 月単位カードアイテム（複数） */}
@@ -227,7 +218,8 @@ const Gallery = () => {
                                         variant="contained"
                                         sx={{
                                             height: '50px',
-                                            m: '20px'
+                                            m: '20px',
+                                            width: '300px'
                                         }}
                                         onClick={() => setState(card.id, true)}
                                     >
