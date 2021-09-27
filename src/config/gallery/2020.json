@@ -12,7 +12,7 @@
             "default": true,
             "name": ["Daily"]
         },
-        "itemNum": 6
+        "itemNum": 8
     },
     {
         "id": "2",
@@ -27,7 +27,7 @@
             "default": true,
             "name": ["Daily"]
         },
-        "itemNum": 6
+        "itemNum": 4
     },
     {
         "id": "3",
@@ -42,7 +42,7 @@
             "default": true,
             "name": ["Daily"]
         },
-        "itemNum": 8
+        "itemNum": 4
     },
     {
         "id": "4",
@@ -57,7 +57,7 @@
             "default": true,
             "name": ["Daily"]
         },
-        "itemNum": 6
+        "itemNum": 19
     },
     {
         "id": "5",
@@ -72,7 +72,7 @@
             "default": true,
             "name": ["Daily"]
         },
-        "itemNum": 7
+        "itemNum": 10
     },
     {
         "id": "6",
@@ -87,7 +87,7 @@
             "default": true,
             "name": ["Daily"]
         },
-        "itemNum": 8
+        "itemNum": 13
     },
     {
         "id": "7",
@@ -102,7 +102,7 @@
             "default": true,
             "name": ["Daily"]
         },
-        "itemNum": 11
+        "itemNum": 12
     },
     {
         "id": "8",
@@ -117,7 +117,7 @@
             "default": true,
             "name": ["Daily"]
         },
-        "itemNum": 11
+        "itemNum": 5
     },
     {
         "id": "9",
@@ -132,7 +132,7 @@
             "default": true,
             "name": ["Daily"]
         },
-        "itemNum": 5
+        "itemNum": 4
     },
     {
         "id": "10",
@@ -147,7 +147,7 @@
             "default": true,
             "name": ["Daily"]
         },
-        "itemNum": 5
+        "itemNum": 7
     },
     {
         "id": "11",
@@ -162,7 +162,7 @@
             "default": true,
             "name": ["Daily"]
         },
-        "itemNum": 6
+        "itemNum": 7
     },
     {
         "id": "12",
@@ -177,6 +177,6 @@
             "default": true,
             "name": ["Daily"]
         },
-        "itemNum": 10
+        "itemNum": 19
     }
 ]
