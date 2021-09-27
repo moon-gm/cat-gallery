@@ -16,6 +16,7 @@ import _2017 from '../config/gallery/2017.json'
 import _2018 from '../config/gallery/2018.json'
 import _2019 from '../config/gallery/2019.json'
 import _2020 from '../config/gallery/2020.json'
+import _2021 from '../config/gallery/2021.json'
 
 const CardItems = ({ card, year, allPhotoShow }) => {
 
@@ -134,6 +135,7 @@ const Gallery = () => {
         case '2018': gallerys = _2018; break
         case '2019': gallerys = _2019; break
         case '2020': gallerys = _2020; break
+        case '2021': gallerys = _2021; break
         default: gallerys = _2013; break
     }
 
